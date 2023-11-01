@@ -14,12 +14,12 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-data "aws_db_snapshot" "db_snapshot" {
+/*data "aws_db_snapshot" "db_snapshot" {
     #most_recent = true
     db_snapshot_identifier = snappi
     db_instance_identifier = "example"
 }
-
+*/
 
 resource "aws_instance" "Blog" {
   ami           = data.aws_ami.app_ami.id
@@ -39,7 +39,8 @@ resource "aws_db_instance" "example" {
   publicly_accessible    = false
   username               = var.db-username
   password               = var.db-password
-  snapshot_identifier    = "${data.aws_db_snapshot.db_snapshot.id}"
+  #snapshot_identifier    = "${data.aws_db_snapshot.db_snapshot.id}"
+  snapshot_identifier    = "arn:aws:rds:us-west-2:494106478319:snapshot:snappi"
   #vpc_security_group_ids = [aws_security_group.example.id]
   skip_final_snapshot    = true
 
