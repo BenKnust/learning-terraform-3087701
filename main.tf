@@ -16,7 +16,7 @@ data "aws_ami" "app_ami" {
 
 data "aws_db_snapshot" "db_snapshot" {
     #most_recent = true
-    snapshot_identifier = snappi
+    db_snapshot_identifier = snappi
     db_instance_identifier = "example"
 }
 
