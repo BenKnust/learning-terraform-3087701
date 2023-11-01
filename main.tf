@@ -14,11 +14,12 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-/*data "aws_db_snapshot" "db_snapshot" {
-    most_recent = true
+data "aws_db_snapshot" "db_snapshot" {
+    #most_recent = true
+    snapshot_identifier = snappi
     db_instance_identifier = "example"
 }
-*/
+
 
 resource "aws_instance" "Blog" {
   ami           = data.aws_ami.app_ami.id
@@ -29,7 +30,7 @@ resource "aws_instance" "Blog" {
   }
 }
 
-/*resource "aws_db_instance" "example" {
+resource "aws_db_instance" "example" {
   engine                 = "mysql"
   db_name                = "example"
   identifier             = "example"
@@ -46,4 +47,3 @@ resource "aws_instance" "Blog" {
     Name = "example-db"
   }
 }
-*/
