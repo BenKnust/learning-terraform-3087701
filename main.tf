@@ -22,3 +22,20 @@ resource "aws_instance" "Blog" {
     Name = "Blog"
   }
 }
+
+resource "aws_db_instance" "example" {
+  engine                 = "mysql"
+  db_name                = "example"
+  identifier             = "example"
+  instance_class         = "db.t2.micro"
+  allocated_storage      = 20
+  publicly_accessible    = false
+  username               = var.db-username
+  password               = var.db-password
+  vpc_security_group_ids = [aws_security_group.example.id]
+  skip_final_snapshot    = true
+
+  tags = {
+    Name = "example-db"
+  }
+}
