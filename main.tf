@@ -23,7 +23,7 @@ resource "aws_instance" "Blog" {
   }
 }
 
-resource "aws_db_instance" "example" {
+/*resource "aws_db_instance" "example" {
   engine                 = "mysql"
   db_name                = "example"
   identifier             = "example"
@@ -39,3 +39,4 @@ resource "aws_db_instance" "example" {
     Name = "example-db"
   }
 }
+*/
