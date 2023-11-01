@@ -32,7 +32,7 @@ resource "aws_db_instance" "example" {
   publicly_accessible    = false
   username               = var.db-username
   password               = var.db-password
-  vpc_security_group_ids = [aws_security_group.example.id]
+  #vpc_security_group_ids = [aws_security_group.example.id]
   skip_final_snapshot    = true
 
   tags = {
