@@ -18,7 +18,7 @@ data "aws_ami" "app_ami" {
     most_recent = true
     db_instance_identifier = "example"
 }
-*\
+*/
 
 resource "aws_instance" "Blog" {
   ami           = data.aws_ami.app_ami.id
@@ -46,4 +46,4 @@ resource "aws_instance" "Blog" {
     Name = "example-db"
   }
 }
-*\
+*/
