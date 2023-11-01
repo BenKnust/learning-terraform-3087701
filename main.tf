@@ -23,7 +23,7 @@ resource "aws_instance" "Blog" {
   }
 }
 
-/*resource "aws_db_instance" "example" {
+resource "aws_db_instance" "example" {
   engine                 = "mysql"
   db_name                = "example"
   identifier             = "example"
@@ -32,6 +32,7 @@ resource "aws_instance" "Blog" {
   publicly_accessible    = false
   username               = var.db-username
   password               = var.db-password
+  snapshot_identifier    = snappi
   #vpc_security_group_ids = [aws_security_group.example.id]
   skip_final_snapshot    = true
 
@@ -39,4 +40,3 @@ resource "aws_instance" "Blog" {
     Name = "example-db"
   }
 }
-*/
