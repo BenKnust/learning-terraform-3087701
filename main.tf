@@ -30,6 +30,11 @@ resource "aws_instance" "Blog" {
   }
 }
 
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+  acl    = "private"
+}
+
 resource "aws_db_instance" "example" {
   engine                 = "mysql"
   db_name                = "example"
