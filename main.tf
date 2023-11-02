@@ -30,7 +30,7 @@ resource "aws_instance" "Blog" {
   }
 }
 
-resource "aws_s3_bucket" "blog_bucket" {
+resource "aws_s3_bucket" "blog" {
   bucket = "blog-bucket-dev"
   acl    = "private"
 }
