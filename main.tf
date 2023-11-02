@@ -21,7 +21,7 @@ data "aws_ami" "app_ami" {
 }
 */
 
-resource "aws_instance" "Blog" {
+resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
 
@@ -30,8 +30,8 @@ resource "aws_instance" "Blog" {
   }
 }
 
-resource "aws_s3_bucket" "tf-course" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "blog_bucket" {
+  bucket = "blog_bucket_dev"
   acl    = "private"
 }
 
