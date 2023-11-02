@@ -30,7 +30,7 @@ resource "aws_instance" "Blog" {
   }
 }
 
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "tf-course" {
   bucket = "my-tf-test-bucket"
   acl    = "private"
 }
