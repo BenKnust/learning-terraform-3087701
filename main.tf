@@ -113,7 +113,7 @@ module "jumphost_sg" {
   version = "5.1.0"
   name = "jumphost"
   vpc_id = data.aws_vpc.default.id
-  ingress_rules = ["ssh-22-tcp"]
+  ingress_rules = ["ssh-tcp"]
   ingress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules = ["all-all"]
   egress_cidr_blocks = ["0.0.0.0/0"]
