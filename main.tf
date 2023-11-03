@@ -14,6 +14,27 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
+
+data "aws_ami" "app_ami" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["CentOS Stream 9 aarch64*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["125523088429"] # CentOS
+}
+
+
+
+
+
 /*data "aws_db_snapshot" "db_snapshot" {
     #most_recent = true
     db_snapshot_identifier = snappi
