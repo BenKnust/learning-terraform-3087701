@@ -48,6 +48,7 @@ resource "aws_instance" "jumphost" {
 
   #vpc_security_group_ids = [aws_security_group.blog.id]
   #vpc_security_group_ids = [module.blog_sg.security_group_id]
+  key_name = "centos9_jump_host"
 
   tags = {
     Name = "JumpHost"
@@ -94,6 +95,7 @@ resource "aws_db_instance" "example" {
     Name = "example-db"
   }
 }
+
 
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
