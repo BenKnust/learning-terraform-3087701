@@ -15,7 +15,7 @@ data "aws_ami" "app_ami" {
 }
 
 
-data "aws_ami" "app_ami_jumphost" {
+data "aws_ami_jh" "app_ami" {
   most_recent = true
 
   filter {
