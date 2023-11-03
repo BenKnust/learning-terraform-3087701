@@ -15,7 +15,7 @@ data "aws_ami" "app_ami" {
 }
 
 
-data "aws_ami_jh" "app_ami" {
+data "aws_ami" "jumphost_ami" {
   most_recent = true
 
   filter {
@@ -41,6 +41,18 @@ data "aws_ami_jh" "app_ami" {
     db_instance_identifier = "example"
 }
 */
+
+resource "aws_instance" "jumphost" {
+  ami           = data.aws_ami.jumphost_ami.id
+  instance_type = var.instance_type
+
+  #vpc_security_group_ids = [aws_security_group.blog.id]
+  #vpc_security_group_ids = [module.blog_sg.security_group_id]
+
+  tags = {
+    Name = "JumpHost"
+  }
+}
 
 resource "aws_instance" "Blog" {
   ami           = data.aws_ami.app_ami.id
