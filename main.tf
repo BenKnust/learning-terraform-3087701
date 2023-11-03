@@ -20,7 +20,7 @@ data "aws_ami" "jumphost_ami" {
 
   filter {
     name   = "name"
-    values = ["CentOS Stream 9*"]
+    values = ["CentOS Stream 9 x86_64*"]
   }
 
   filter {
