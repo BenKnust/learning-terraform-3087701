@@ -32,7 +32,11 @@ data "aws_ami" "jumphost_ami" {
 }
 
 
-
+#IP of aws instance copied to a file ip.txt in local system
+resource "local_file" "ip" {
+    content  = aws_instance.jumphost.public_ip
+    filename = "ip.txt"
+}
 
 
 /*data "aws_db_snapshot" "db_snapshot" {
